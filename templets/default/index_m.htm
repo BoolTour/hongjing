@@ -1,0 +1,156 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<meta content="yes" name="apple-mobile-web-app-capable" />
+<meta content="telephone=no" name="format-detection" />
+<meta name="author" content="order by dede58.com" />
+<title>{dede:global.cfg_webname/}移动版</title>
+<meta name="description" content="{dede:global.cfg_description/}" />
+<meta name="keywords" content="{dede:global.cfg_keywords/}" />
+<link rel="stylesheet" type="text/css" href="/m/skin/css/master.css" />
+<link rel="stylesheet" type="text/css" href="/m/skin/css/subpage.css" />
+<link rel="stylesheet" type="text/css" href="/m/skin/css/child_vip.css" />
+<script type="text/javascript" src="/m/skin/js/jquery.js"></script>
+<style>
+.head {
+	background: #ffffff
+}
+.foot {
+	background: #333333
+}
+.nav {
+	background: #085b51
+}
+.nav_color {
+	background: #085b51
+}
+</style>
+<link rel="stylesheet" type="text/css" href="/m/skin/css/master.css" />
+<link rel="stylesheet" type="text/css" href="/m/skin/css/subpage.css" />
+<link rel="stylesheet" type="text/css" href="/m/skin/css/child_vip.css" />
+<link rel="stylesheet" type="text/css" href="/m/skin/css/swiper.css" />
+<script type="text/javascript" src="/m/skin/js/jquery.js"></script>
+<script type="text/javascript" src="/m/skin/js/nav.js"></script>
+<script type="text/javascript" src="/m/skin/js/cart_icon.js"></script>
+<script type="text/javascript" src="/m/skin/js/swiper.js"></script>
+<script type="text/javascript" src="/m/skin/js/lihe.js"></script>
+</head>
+<body>
+{dede:include filename="nav_m.htm"/}
+<div class="allpage">
+  <div class="black-fixed iconfont">&#xe60f;</div>
+  <div class="header">
+    <div class="head">
+      <div class="search_hl iconfont">&#xe600;</div>
+      <a href="/m" title="首页" class="logo"> <img src="/m/skin/img/logo_03.png" alt="{dede:global.cfg_webname/}"/> </a>
+      <div class="nav-btn commonfont">&#xe60b;</div>
+      <div class="search">
+        <form class="am-topbar-form am-topbar-left am-form-inline am-topbar-right" role="search" action="{dede:global.cfg_cmsurl/}/plus/search.php">
+		<input type="hidden" name="mobile" value="1" />
+		<input type="hidden" name="kwtype" value="0" />
+          <a class="xbtn iconfont" href="javascript:;">&#xe60f;</a>
+          <input type="text" name="q" placeholder="请输入搜索关键词！" class="search-input">
+          <input type="submit" class="search-btn iconfont" value="&#xe600;">
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="banner">
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+        {dede:arclist typeid='15' row='2'}
+          <div class="swiper-slide"><img src="[field:picname/]"></div>
+        {/dede:arclist}  
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+    <div class="nav_new">
+      <ul>
+       {dede:channel type='top' row='8'}
+        <li class="blue"> <a href="list.php?tid=[field:id/]">[field:typename/]</a> </li>
+       {/dede:channel}
+      </ul>
+      <div class="c"></div>
+    </div>
+    {dede:channelartlist typeid='9,0'}
+    <div class="common_title">
+      <h2>{dede:field name='typename'/} <i>{dede:field name='typenameen'/}</i></h2>
+      <a href="list.php?tid={dede:field name='id'/}" class="title_more">更多</a> <span></span>
+      <div class="clear"></div>
+    </div>
+    <div class="index_case">
+      <ul>
+      {dede:arclist row='3' orderby='id' titlelen='40'}
+        <li> <a href="view.php?aid=[field:id/]" title="[field:title/]"> <img src="[field:picname/]" alt="[field:title/]"> <span>[field:title/]</span> </a> </li>
+      {/dede:arclist}    
+        <div class="clear"></div>
+      </ul>
+    </div>
+    {/dede:channelartlist}
+    {dede:channelartlist typeid='3,0'}
+    <div class="common_title cs2">
+      <h2>{dede:field name='typename'/} <i>{dede:field name='typenameen'/}</i></h2>
+      <a href="list.php?tid={dede:field name='id'/}" class="title_more">更多</a> <span></span>
+      <div class="clear"></div>
+    </div>
+    <div class="new_i">
+      <ul>
+      {dede:arclist row='5' orderby='id' titlelen='40'}
+        <li> <a href="view.php?aid=[field:id/]">[field:title/]</a> </li>
+      {/dede:arclist}      
+      </ul>
+    </div>
+    {/dede:channelartlist}
+    {dede:channelartlist typeid='4,0'}
+    <div class="common_title">
+      <h2>{dede:field name='typename'/} <i>{dede:field name='typenameen'/}</i></h2>
+      <a href="list.php?tid={dede:field name='id'/}" class="title_more">更多</a> <span></span>
+      <div class="clear"></div>
+    </div>
+    <div class="index_honor">
+      <ul>
+      {dede:arclist row='2' orderby='id' titlelen='40'}
+        <li> <a href="view.php?aid=[field:id/]" title="[field:title/]"> <img src="[field:picname/]" alt="[field:title/]"> <span>[field:title/]</span> </a> </li>
+      {/dede:arclist}         
+        <div class="clear"></div>
+      </ul>
+    </div>
+    {/dede:channelartlist}
+    {dede:channelartlist typeid='1,0'}
+    <div class="common_title">
+      <h2>{dede:field name='typename'/} <i>{dede:field name='typenameen'/}</i></h2>
+      <a href="list.php?tid={dede:field name='id'/}" class="title_more">更多</a> <span></span>
+      <div class="clear"></div>
+    </div>
+    <div class="about_i_c">{dede:sql sql='Select content from dede_arctype where id=1'}[field:content function='cn_substr(html2text(@me),260)'/] {/dede:sql} ...</div>
+    <div class="more_i"> <a href="list.php?tid={dede:field name='id'/}" title="查看更多">查看更多</a> </div>
+   {/dede:channelartlist}
+    <div class="hotline">
+      <h3>咨询热线</h3>
+      <a href="tel:{dede:global.cfg_tel/}" class="tel_number">{dede:global.cfg_tel/}</a> </div>
+      {dede:channelartlist typeid='2,0'}
+    <div class="common_title cs2">
+      <h2>{dede:field name='typename'/} <i>{dede:field name='typenameen'/}</i></h2>
+      <a href="list.php?tid={dede:field name='id'/}" class="title_more">更多</a> <span></span>
+      <div class="clear"></div>
+    </div>
+    <div class="new_i">
+      <ul>
+      {dede:arclist row='5' orderby='id' titlelen='40'}
+        <li> <a href="view.php?aid=[field:id/]">[field:title/]</a> </li>
+      {/dede:arclist}     
+      </ul>
+    </div>
+    {/dede:channelartlist}
+    <div class="cbtn-top" style="display: block;"><a href="javascript:;"><img src="/m/skin/img/gotop.png"></a></div>
+    <div class="beian"> 技术支持：<a title="织梦58" target="_blank" href="http://www.dede58.com">织梦58</a></div>
+  </div>
+  {dede:include filename="footer_m.htm"/}
+</div>
+</body>
+</html>

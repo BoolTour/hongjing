@@ -1,0 +1,28 @@
+<div class="fyLeft">
+    {dede:channelartlist typeid='4,0'}
+      <div class="l_pro">
+        <div class="l_title">{dede:field name='typename'/}<font>{dede:field name='typenameen'/}</font></div>
+        <ul class="l_procon">
+        {dede:channel type='son' row='5' currentstyle="<li class='proOne'><a href='~typelink~' class='thisclass'>~typename~</a> </li>" }
+          <li class="proOne"><a href="[field:typeurl/]" class="">[field:typename/]</a></li>
+        {/dede:channel} 
+        </ul>
+      </div>
+      {/dede:channelartlist}
+      {dede:channelartlist typeid='2,0'}
+      <div class="l_news">
+        <div class="l_title">{dede:field name='typename'/}<font>{dede:field name='typenameen'/}</font><a href="{dede:field name='typeurl'/}" title="更多">更多></a></div>
+        <ul class="pointer">
+          {dede:arclist titlelen=80 orderby='id' row='5'}
+          <li><a href="[field:arcurl/]" title="[field:title/]">[field:title/]</a></li>
+          {/dede:arclist}  
+        </ul>
+      </div>
+      {/dede:channelartlist}
+      <div class="l_contact">
+        <div class="l_title">联系方式<font>contact us</font></div>
+        <div class="contactcon"> <img src="/skin/img/l_tel.gif" class="l_tel"> 地址：{dede:global.cfg_adr/} <br />
+          电话：{dede:global.cfg_tel/}<br />
+          传真：{dede:global.cfg_fax/} </div>
+      </div>
+    </div>

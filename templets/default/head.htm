@@ -1,0 +1,24 @@
+<div class="menu">
+  <ul>
+    <li><a {dede:field name=typeid runphp="yes"}(@me=="")? @me=" class='on' ":@me="";{/dede:field} href="/">网站首页</a> </li>
+    {dede:channelartlist typeid='top' currentstyle='on'}
+    <li><a class="{dede:field.currentstyle/}" href="{dede:field name='typeurl'/}"> {dede:field name='typename'/} </a></li>
+    {/dede:channelartlist}
+  </ul>
+</div>
+<div class="notice">
+  <div class="main">
+    <div class="noticefl"><b>网站公告：</b>
+      <marquee scrollamount="2" scrolldelay="5" onMouseOut="this.start()" onMouseOver="this.stop()">
+      {dede:global.cfg_ggtext/}
+      </marquee>
+    </div>
+    <div class="search">
+      <form method="post" action="/plus/search.php"  name="formsearch">
+        <input type="hidden" name="kwtype" value="0" />
+        <input type="text" class="text" name="q" id="q" value="请输入搜索关键词" onFocus="this.value=''" onBlur="if(!value){value=defaultValue}"/>
+        <input type="submit" title="搜索" class="button" value=""/>
+      </form>
+    </div>
+  </div>
+</div>

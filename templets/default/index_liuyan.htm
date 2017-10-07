@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="author" content="order by dede58.com" />
+<title>{dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:field name='keywords'/}" />
+<meta name="description" content="{dede:global.cfg_description/}" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<LINK href="/skin/css/style.css" rel=stylesheet>
+<LINK href="/skin/css/jbox.css" rel=stylesheet>
+<script language="JavaScript" type="text/javascript" src="/skin/js/jquery.js"></script>
+<script language="JavaScript" type="text/javascript" src="/skin/js/functions.js"></script>
+<script language="JavaScript" type="text/javascript" src="/skin/js/formvalid.js"></script>
+<script language="JavaScript" type="text/javascript" src="/skin/js/jquery.jbox-2.3.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="/skin/js/search.js"></script>
+<script language="JavaScript" type="text/javascript" src="/skin/js/menu.js"></script>
+<script language="JavaScript" type="text/javascript" src="/skin/js/jqselect.js"></script>
+<script language="JavaScript" type="text/javascript" src="/skin/js/jquery.lazyload.js"></script>
+<script language="JavaScript" type="text/javascript" src="/skin/js/jquery.jslides.js"></script>
+<script language="JavaScript" type="text/javascript" src="/skin/js/ajax.js"></script>
+<!--[if IE 6]><script type="text/javascript" src="/skin/js/dd_belatedpng.js"></script><![endif]-->
+</head>
+<body class="vbody">
+{dede:include filename="top.htm"/}
+<div id="full-screen-slider">
+  <ul id="slides">
+    {dede:arclist typeid='14' row='3' }
+    <li style="background:url('[field:picname/]') no-repeat center top;">&nbsp;</li>
+    {/dede:arclist}
+  </ul>
+</div>
+{dede:include filename="head.htm"/}
+<div class="clear"></div>
+<div class="main">
+  <div class="fyMain">
+    {dede:include filename="left.htm"/}
+    <div class="fyRight">
+      <div class="title"> <span class="fl">{dede:field name='typename'/}</span> <span class="fr">当前位置：{dede:field name='position'/}</span></div>
+      <div class="book">
+        <div class="bookline"></div>
+        <div class="message">
+          <form action="/plus/diy.php" enctype="multipart/form-data" method="post">
+                <input type="hidden" name="action" value="post" />
+                <input type="hidden" name="diyid" value="1" />
+                <input type="hidden" name="do" value="2" />
+
+            <ul>
+              <li>
+                <p class="message_title"><span class="c_red">* </span>姓名：</p>
+                <p class="message_content">
+                  <input type="text" name="name" id="name" size="30" maxlength="10" valid="required|limit" errmsg="请输入姓名！|姓名长度必须在1-15个字符之间！" max="10" min="1" />
+                </p>
+              </li>
+              <li>
+                <p class="message_title"><span class="c_red">* </span>手机号码：</p>
+                <p class="message_content">
+                  <input type="text" name="phone" size="30" id="phone" maxlength="11" valid="required|isMobile|limit" errmsg="请输入手机号码！|手机号码格式有误！|手机号码长度必须为11个字符！" max="11" min="11" />
+                </p>
+              </li>
+              <li>
+                <p class="message_title">邮箱地址：</p>
+                <p class="message_content">
+                  <input name="email" type="text" id="email" size="30" valid="isEmail" errmsg="邮箱格式有误！" />
+                </p>
+              </li>
+              <li class="contentb">
+                <p class="message_title">留言内容：</p>
+                <p class="message_content">
+                  <textarea name="content" id="content" valid="required" cols="45" rows="5" errmsg="请填写留言内容！"></textarea>
+                </p>
+              </li>
+              <li class="yzm">
+                <p class="message_sub"><button type="submit" style="border: none;"><img src="/skin/img/book_sub.jpg" width="104" height="33"></button></p>
+              </li>
+                  <input type="hidden" name="dede_fields" value="name,text;phone,text;email,text;content,multitext" />
+                  <input type="hidden" name="dede_fieldshash" value="c10d946e7187b70883b74a0149911bc5" />
+            </ul>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".fyRight img").lazyload({
+			threshold: 20,
+			placeholder: "images/blank.gif",
+			effect: showeffect
+		})
+	});
+</script>
+<div class="footclear"></div>
+{dede:include filename="footer.htm"/}
+</body>
+</html>
